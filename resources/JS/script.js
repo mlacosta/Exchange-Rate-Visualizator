@@ -3,11 +3,11 @@ const display = document.getElementById('display-data');
 const fromList = document.getElementById('from-list');
 const toList = document.getElementById('to-list');
 
+
 const apiKey = 'RSY8066JCSOQEQU8';
 const functionType =  'CURRENCY_EXCHANGE_RATE';
 const url = 'https://www.alphavantage.co/query?';
 //const fetch = require("node-fetch");
-
 
 
 async function getExchange() {
@@ -17,12 +17,13 @@ async function getExchange() {
 
     const endpoint = `${url}function=${functionType}&from_currency=${from}&to_currency=${to}&apikey=${apiKey}`;
     
+    display.innerHTML ='<h2>LOADING...</h2>';
+
+
     try{
         const response = await fetch(endpoint);
         if (response.ok){
             const jsonResponse = await response.json();
-            alert('data received')
-            
             const message = jsonResponse[Object.keys(jsonResponse)[0]];
             let text = '';           
            
@@ -36,12 +37,13 @@ async function getExchange() {
         }
     }
     catch(error){
-
+        loading.style.display = 'none'; 
         console.log(error);
     }
 
     
 }
+
 
 
 button.addEventListener('click',getExchange);
