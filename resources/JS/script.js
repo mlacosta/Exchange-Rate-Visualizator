@@ -1,5 +1,7 @@
 const button = document.getElementById('display-button');
 const display = document.getElementById('display-data');
+const fromList = document.getElementById('from-list');
+const toList = document.getElementById('to-list');
 
 const apiKey = 'RSY8066JCSOQEQU8';
 const functionType =  'CURRENCY_EXCHANGE_RATE';
