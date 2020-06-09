@@ -17,9 +17,17 @@ async function getExchange() {
         if (response.ok){
             const jsonResponse = await response.json();
 
-            //console.log(jsonResponse['Realtime Currency Exchange Rate'])
             alert('data received')
-            display.innerHTML = JSON.stringify(jsonResponse[Object.keys(jsonResponse)[0]])
+            const message = jsonResponse[Object.keys(jsonResponse)[0]];
+            let text = '';           
+           
+            const keys = Object.keys(message);
+            keys.forEach((prop)=> 
+                text+=`<span style='font-weight: bold;'>${prop}:</span>
+                <span style='color:red;'>${message[prop]}</span><br> `);
+      
+                display.innerHTML = text;
+
         }
     }
     catch(error){
