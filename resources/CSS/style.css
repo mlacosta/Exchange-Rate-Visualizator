@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+
+    font-size: 18px;
+    color: blanchedalmond;
+}
+
+body{
+    display: block;
+    height: 100vh;
+    background-color: black;
+}
+
+.main{
+
+    display: block;
+
+}
+.display{
+    width: 500px;
+    height: 200px;
+    border: 2px solid black;
+    background-color: white;
+    margin: 0 auto;
+    color: black;
+}
+
+.button{
+    padding: 5px;
+    border: 2px solid tomato ;
+    width: 100px;
+    cursor: pointer;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.button:hover{
+    transition: .5s;
+    background-color: grey;
+}
