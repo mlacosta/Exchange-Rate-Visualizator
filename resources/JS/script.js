@@ -37,7 +37,6 @@ async function getExchange() {
         }
     }
     catch(error){
-        loading.style.display = 'none'; 
         console.log(error);
     }
 
